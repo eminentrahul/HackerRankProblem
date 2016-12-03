@@ -1,0 +1,33 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+#define MAX_LEN 10
+
+int main(){
+    int *h = malloc(sizeof(int) * 26);
+    for(int h_i = 0; h_i < 26; h_i++){
+        scanf("%d",&h[h_i]);
+    }
+    
+    char* word = (char *)malloc(MAX_LEN + 1);
+    scanf("%s",word);
+    long int length = strlen(word);
+    
+    int height = 0;
+    for(int i = 0; i < length; i++) {
+        if((h[word[i] - 'a']) > height)
+            height = h[word[i] - 'a'];
+    }
+    
+    printf("%ld\n", length * 1 * height);
+    
+    free(h);
+    free(word);
+    
+    return 0;
+}
