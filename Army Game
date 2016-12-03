@@ -1,0 +1,28 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main(){
+    int n;
+    int m;
+    scanf("%d %d",&m,&n);
+    if (m==n) {
+        if (m%2==0&&n%2==0) {
+            printf("%d", (m*n)/4);
+        } else {
+            printf("%d", (((m-1)*(n-1))/4)+m);
+        }
+    }
+    else if (m>n){
+        printf("%d", (m*n)/4+(m/n));
+    }
+        else{
+            printf("%d", (m*n)/4+(n/m));
+        }
+    
+    return 0;
+}
